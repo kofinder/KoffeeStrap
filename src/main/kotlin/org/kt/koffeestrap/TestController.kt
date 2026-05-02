@@ -1,0 +1,16 @@
+package org.kt.koffeestrap
+
+import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
+import org.springframework.web.bind.annotation.GetMapping
+
+
+@Controller
+class HomeController {
+    @GetMapping("/")
+    fun home(model: Model): String {
+        model.addAttribute("appName", "KoffeeStrap")
+        model.addAttribute("pageTitle", "Home")
+        return "content/home"
+    }
+}
